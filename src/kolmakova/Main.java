@@ -31,6 +31,7 @@ public class Main {
         sortMatrixRowsInAscendingAndDescendingOrderOfElementValues();
         sortMatrixColumnsInAscendingAndDescendingOrderOfElementValues();
         formRandomMatrixConsistingOfZerosAndOnesInEachColumnNumberUnitsIsEqualToColumnNumber();
+        formRandomMatrixConsistingOfZerosAndOnesInEachColumnNumberUnitsIsEqualToColumnNumber2();
     }
 
     /**
@@ -618,6 +619,24 @@ public class Main {
     }
 
     static void formRandomMatrixConsistingOfZerosAndOnesInEachColumnNumberUnitsIsEqualToColumnNumber() {
+        Random rnd = new Random();
+        int m = (int) (Math.random() * 11);
+        int n = (int) (Math.random() * 11);
+        int[][] matrix = new int[m][n];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = 0;
+                if (i < matrix[i].length && i <= j) {
+                    for (int h = i; h >= 0; h--) {
+                        matrix[h][j] = 1;
+                    }
+                }
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    static void formRandomMatrixConsistingOfZerosAndOnesInEachColumnNumberUnitsIsEqualToColumnNumber2() {
         Random rnd = new Random();
         int m = (int) (Math.random() * 11);
         int n = (int) (Math.random() * 11);
